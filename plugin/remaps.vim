@@ -23,6 +23,9 @@ nnoremap <silent><Leader>bp :b# <CR>
 "Simple Split swapping
 nnoremap <silent><Leader>sp <C-W>x
 
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
 " Reselect visual selection after indenting
 vnoremap <silent>< <gv
 vnoremap <silent>> >gv
@@ -61,6 +64,10 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 inoremap < <><Left>
 inoremap <<BS> <
+"
+"     Terminal remaps
+"
+tnoremap <C-w>n <C-\><C-n><CR>
 
 "
 "     Fugitive
@@ -88,17 +95,17 @@ nnoremap <silent> <leader>rn :Files ~/.config/nvim<cr>
 "
 nnoremap <leader>m :lua require("harpoon.mark").add_file()<CR>
 nnoremap <leader>jj :lua require("harpoon.ui").toggle_quick_menu()<CR>
-"nnoremap <leader>tc :lua require("harpoon.cmd-ui").toggle_quick_menu()<CR>
+nnoremap <leader>jc :lua require("harpoon.cmd-ui").toggle_quick_menu()<CR>
 
 nnoremap <leader>jf :lua require("harpoon.ui").nav_file(1)<CR>
 nnoremap <leader>jd :lua require("harpoon.ui").nav_file(2)<CR>
 nnoremap <leader>js :lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <leader>ja :lua require("harpoon.ui").nav_file(4)<CR>
 
-nnoremap <leader>jk :lua require("harpoon.tmux").gotoTerminal(1)<CR>
-nnoremap <leader>jl :lua require("harpoon.tmux").gotoTerminal(2)<CR>
-nnoremap <leader>ji :lua require("harpoon.tmux").sendCommand(1, 1)<CR>
-nnoremap <leader>jo :lua require("harpoon.tmux").sendCommand(1, 2)<CR>
+nnoremap <leader>jk :lua require("harpoon.term").gotoTerminal(1)<CR>
+nnoremap <leader>jl :lua require("harpoon.term").gotoTerminal(2)<CR>
+nnoremap <leader>ji :lua require("harpoon.term").sendCommand(1, 1)<CR>
+nnoremap <leader>jo :lua require("harpoon.term").sendCommand(1, 2)<CR>
 
 "
 "     Notational fzf
@@ -120,5 +127,3 @@ nnoremap <silent><C-f> :silent !tmux neww tmux-sessionizer<CR>
 "
 "nnoremap <silent> <leader>ri :Telescope live_grep<cr>
 nnoremap <silent> <leader>t :Telescope <cr>
-
-

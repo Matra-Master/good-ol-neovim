@@ -18,12 +18,12 @@ set nobackup
 set incsearch
 set termguicolors
 set scrolloff=4
-set signcolumn=yes
+set signcolumn=number
 set updatetime=100
 set ignorecase
 set smartcase
 set shortmess+=c
-set showtabline=2
+set showtabline=1
 set mouse=a
 set cursorline
 set clipboard+=unnamedplus
@@ -33,6 +33,7 @@ set list
 set listchars=tab:▸\ ,trail:·
 set confirm
 set emoji
+set laststatus=3
 
 let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
 let g:netrw_browse_split = 0
@@ -53,6 +54,9 @@ set wildmenu
 "	|globpath()| unless a flag is passed to disable this.
 set wildignore+=**/.git/*
 
+" UNLIMITED UNDOOOOS
+set undofile
+
 
 "Autosets and stuff
 autocmd InsertEnter * :set norelativenumber
@@ -63,3 +67,5 @@ colorscheme gruvbox
 highlight Normal guibg=NONE ctermbg=NONE
 highlight NonText guibg=NONE ctermbg=NONE
 highlight EndOfBuffer guibg=NONE ctermbg=NONE
+highlight signcolumn guibg=NONE ctermbg=NONE
+highlight WinSeparator guibg=NONE ctermbg=NONE
